@@ -231,17 +231,6 @@ export default function TouristHome() {
                   {/* TAB 1: HOME FEED */}
                   {activeTab === 'home-feed' && (
                     <>
-                      {/* Feed Notice */}
-                      <div className="bg-gradient-to-r from-surface-container to-surface-container-high p-space-md rounded-xl flex items-center justify-between shadow-sm border border-outline-variant/20">
-                        <div className="flex items-center gap-space-sm">
-                          <span className="material-symbols-outlined text-tertiary text-[22px]">volume_off</span>
-                          <div>
-                            <p className="font-title-md text-title-md text-on-surface leading-tight font-semibold">Quiet Weaving Interval</p>
-                            <p className="font-body-sm text-body-sm text-outline">1:00 PM – 2:30 PM: Pit looms rest. Courtyard visits continue silently.</p>
-                          </div>
-                        </div>
-                        <span className="font-label-sm text-label-sm px-2 py-1 rounded-full bg-surface-container-highest text-tertiary uppercase font-bold">Active Now</span>
-                      </div>
 
                   {/* POST CARD 1: Tariq Ansari (Zari Pit Loom) */}
                   <article className="bg-surface-container-low rounded-2xl overflow-hidden shadow-lg border border-outline-variant/20">
