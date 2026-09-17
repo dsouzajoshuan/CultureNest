@@ -18,14 +18,48 @@
   --accent: #fcba5b;
 }
 
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
   background-color: var(--bg);
   color: var(--on-surface);
   font-family: 'Plus Jakarta Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Reset for Links - prevents ugly browser link blue/underlines */
+a, a:hover, a:focus, a:visited, a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #131316;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2d;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #484553;
 }

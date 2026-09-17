@@ -1,9 +1,34 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { community, archiveItems } from '../data/mockData';
 
 export default function Layout({ children, searchQuery, setSearchQuery }) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('culture_user');
+      if (!stored) {
+        navigate('/login');
+        return;
+      }
+      const parsed = JSON.parse(stored);
+      if (parsed.type === 'tourist') {
+        navigate('/tourist');
+        return;
+      }
+      setCurrentUser(parsed);
+    } catch (e) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('culture_user');
+    navigate('/login');
+  };
 
   const isCurrent = (path) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -104,22 +129,28 @@ export default function Layout({ children, searchQuery, setSearchQuery }) {
             </div>
           </nav>
 
-          {/* Profile Badge */}
+          {/* Profile Badge & Log Out */}
           <div className="p-space-sm bg-surface-container border-t border-outline-variant/10">
-            <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer">
+            <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-surface-container-high transition-colors">
               <div className="flex items-center gap-2 overflow-hidden">
                 <div className="relative flex-shrink-0">
                   <div className="w-8 h-8 rounded-full bg-tertiary text-on-tertiary font-bold flex items-center justify-center text-xs">
-                    {community.members[0]?.name.charAt(0)}
+                    {(currentUser?.name || community.members[0]?.name).charAt(0)}
                   </div>
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-surface-container"></span>
                 </div>
                 <div className="flex flex-col min-w-0">
-                  <span className="font-title-md text-body-sm text-on-surface truncate leading-tight">{community.members[0]?.name}</span>
-                  <span className="font-label-sm text-label-sm text-secondary truncate">{community.members[0]?.rank}</span>
+                  <span className="font-title-md text-body-sm text-on-surface truncate leading-tight">{currentUser?.name || community.members[0]?.name}</span>
+                  <span className="font-label-sm text-label-sm text-secondary truncate">{currentUser?.role || community.members[0]?.rank}</span>
                 </div>
               </div>
-              <span className="material-symbols-outlined text-[18px] text-on-surface-variant">settings</span>
+              <button 
+                onClick={handleLogout}
+                title="Log Out"
+                className="text-on-surface-variant hover:text-red-400 p-1 rounded transition-colors cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[18px]">logout</span>
+              </button>
             </div>
           </div>
         </div>
@@ -131,7 +162,7 @@ export default function Layout({ children, searchQuery, setSearchQuery }) {
         <header className="fixed top-0 right-0 h-16 bg-surface/80 backdrop-blur-xl z-30 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between border-b border-outline-variant/10" style={{ left: '240px' }}>
           <div className="flex items-center gap-space-sm">
             <Link to="/" className="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors">CultureNest</Link>
-            <span className="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-variant text-tertiary font-semibold">Cultural Preservation</span>
+            <span className="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-variant text-tertiary font-semibold">Community Sanctuary</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -174,6 +205,13 @@ export default function Layout({ children, searchQuery, setSearchQuery }) {
                 />
               </div>
             )}
+            <button 
+              onClick={handleLogout}
+              className="px-3.5 py-1.5 rounded-xl bg-surface-container-high hover:bg-red-950/40 hover:text-red-300 text-on-surface-variant font-label-md text-label-md font-bold transition-all flex items-center gap-1.5 border border-outline-variant/30 cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[18px]">logout</span>
+              Log Out
+            </button>
           </div>
         </header>
 

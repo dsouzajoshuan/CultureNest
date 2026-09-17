@@ -12,7 +12,7 @@ export default function Archive() {
   // Form State
   const [newTitle, setNewTitle] = useState('');
   const [newCategory, setNewCategory] = useState('Handloom & Textiles');
-  const [newCustodian, setNewCustodian] = useState(community.members[0]?.name || 'Prabhakar Shenoy');
+  const [newCustodian, setNewCustodian] = useState(community.members[0]?.name || 'Joshua N Dsouza');
   const [newDescription, setNewDescription] = useState('');
   const [newIsSacred, setNewIsSacred] = useState(false);
 

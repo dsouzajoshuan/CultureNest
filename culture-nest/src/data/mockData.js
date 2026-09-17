@@ -4,7 +4,7 @@ export const community = {
   status: "Verified",
   members: [
     {
-      name: "Prabhakar Shenoy",
+      name: "Joshua N Dsouza",
       rank: "Leader",
       knowledge: 95,
       engagement: 90,
@@ -61,7 +61,7 @@ export const archiveItems = [
     id: 'ARCH-01',
     title: 'Traditional Konkani Handloom Weaves & Zari Motifs',
     category: 'Handloom & Textiles',
-    custodian: 'Prabhakar Shenoy',
+    custodian: 'Joshua N Dsouza',
     date: '16th Century Lineage',
     description: 'Authentic handloom weaves, gold zari border patterns, and loom warp settings documented by community elders.',
     isSacred: false,
@@ -86,5 +86,35 @@ export const archiveItems = [
     description: 'Audio recordings of traditional Kajri and festival Dohas sung during seasonal harvest celebrations.',
     isSacred: true,
     audioFile: 'Konkani_Festival_Stories.mp3'
+  }
+];
+
+export const initialTouristRequests = [
+  {
+    id: 'REQ-101',
+    applicantName: 'Nathan (Tourist User)',
+    requestedTier: 'Full Pass',
+    purpose: 'Academic research on elder audio chants & temple rituals.',
+    dateSubmitted: 'Today, 5:10 PM',
+    status: 'Pending Review',
+    notes: 'Agreed to sanctuary etiquette guidelines.'
+  },
+  {
+    id: 'REQ-102',
+    applicantName: 'Aarav Sharma',
+    requestedTier: 'Limited Pass',
+    purpose: 'Visiting traditional handloom weaving workshops for cultural documentary.',
+    dateSubmitted: 'Yesterday',
+    status: 'Approved',
+    notes: 'Approved by Leader Joshua N Dsouza.'
+  },
+  {
+    id: 'REQ-103',
+    applicantName: 'Elena Rostova',
+    requestedTier: 'Full Pass',
+    purpose: 'Photography of restricted sacred festival ceremonies.',
+    dateSubmitted: '3 days ago',
+    status: 'Rejected',
+    notes: 'Restricted under Elder protection authority.'
   }
 ];
