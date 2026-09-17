@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultureNest / Virasat</title>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN with custom theme config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#422900",
+              "on-primary": "#350a90",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#353438",
+              "surface-container-lowest": "#0e0e11",
+              "on-primary-fixed-variant": "#4d2da6",
+              "on-tertiary-fixed": "#291800",
+              "on-secondary": "#333024",
+              "tertiary": "#fcba5b",
+              "inverse-on-surface": "#303033",
+              "surface": "#131316",
+              "on-surface-variant": "#cac4d5",
+              "inverse-surface": "#e4e1e6",
+              "surface-bright": "#39393c",
+              "on-primary-container": "#33038e",
+              "secondary-fixed-dim": "#ccc6b5",
+              "on-primary-fixed": "#1f005f",
+              "primary-container": "#9d82fc",
+              "outline": "#938e9e",
+              "secondary-container": "#4a473a",
+              "tertiary-fixed": "#ffddb4",
+              "primary-fixed-dim": "#ccbdff",
+              "surface-container-high": "#2a2a2d",
+              "error-container": "#93000a",
+              "secondary-fixed": "#e9e2d0",
+              "on-secondary-fixed": "#1e1c11",
+              "primary": "#ccbdff",
+              "surface-container": "#1f1f22",
+              "tertiary-fixed-dim": "#fcba5b",
+              "surface-container-low": "#1b1b1e",
+              "on-secondary-fixed-variant": "#4a473a",
+              "on-tertiary": "#452b00",
+              "surface-container-highest": "#353438",
+              "on-error": "#690005",
+              "tertiary-container": "#c58a2f",
+              "inverse-primary": "#6549c0",
+              "on-surface": "#e4e1e6",
+              "surface-dim": "#131316",
+              "error": "#ffb4ab",
+              "on-secondary-container": "#bbb5a4",
+              "background": "#131316",
+              "on-background": "#e4e1e6",
+              "on-tertiary-fixed-variant": "#633f00",
+              "primary-fixed": "#e7deff",
+              "surface-tint": "#ccbdff",
+              "secondary": "#ccc6b5",
+              "outline-variant": "#484553"
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            spacing: {
+              "space-xs": "0.25rem",
+              "space-xl": "2.5rem",
+              "margin": "1rem",
+              "space-md": "1rem",
+              "gutter": "1rem",
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              "margin-desktop": "2rem",
+              "gutter-desktop": "1.5rem"
+            },
+            fontFamily: {
+              "headline-lg": ["Playfair Display", "serif"],
+              "body-md": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-lg-mobile": ["Playfair Display", "serif"],
+              "headline-md": ["Playfair Display", "serif"],
+              "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+              "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-xl-mobile": ["Playfair Display", "serif"],
+              "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+              "title-md": ["Plus Jakarta Sans", "sans-serif"],
+              "title-lg": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-xl": ["Playfair Display", "serif"],
+              "label-md": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            fontSize: {
+              "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+              "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+              "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+              "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "500" }],
+              "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+              "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+              "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+              "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+              "title-md": ["15px", { "lineHeight": "20px", "fontWeight": "600" }],
+              "title-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+              "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+              "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @layer base { 
+        html, body { margin: 0; padding: 0; } 
+        body { overscroll-behavior: none; } 
+        main > :first-child { margin-top: 0 !important; } 
+        main > :last-child { margin-bottom: 0 !important; } 
+      } 
+      ::-webkit-scrollbar { display: none; }
+    </style>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

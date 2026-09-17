@@ -1,0 +1,31 @@
+:root {
+  --bg: #131316;
+  --surface: #131316;
+  --surface-low: #1b1b1e;
+  --surface-container: #1f1f22;
+  --surface-high: #2a2a2d;
+  --surface-highest: #353438;
+  --primary: #ccbdff;
+  --primary-container: #9d82fc;
+  --on-primary: #350a90;
+  --secondary: #ccc6b5;
+  --tertiary: #fcba5b;
+  --tertiary-container: #c58a2f;
+  --on-surface: #e4e1e6;
+  --on-surface-variant: #cac4d5;
+  --outline: #938e9e;
+  --outline-variant: #484553;
+  --accent: #fcba5b;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--on-surface);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
