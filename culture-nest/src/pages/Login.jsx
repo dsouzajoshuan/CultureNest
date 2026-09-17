@@ -90,7 +90,7 @@ export default function Login() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high border border-outline-variant/30">
                     <span className="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-                    <span className="font-label-sm text-label-sm text-secondary">38 Artisan Clusters Active</span>
+                    <span className="font-label-sm text-label-sm text-secondary">38 Member Clusters Active</span>
                   </div>
                   <span className="font-label-sm text-label-sm text-outline">Protected Heritage Archive</span>
                 </div>
@@ -123,7 +123,7 @@ export default function Login() {
                       <span className="material-symbols-outlined text-[18px]">verified_user</span>
                       <span className="font-label-md text-label-md font-semibold">Community Member</span>
                     </div>
-                    <span className="font-body-sm text-[11px] opacity-90 leading-tight mt-0.5">For artisans, elders &amp; residents</span>
+                    <span className="font-body-sm text-[11px] opacity-90 leading-tight mt-0.5">For members, elders &amp; residents</span>
                   </button>
 
                   <button 
@@ -323,7 +323,7 @@ export default function Login() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
                       <div className="flex flex-col gap-space-xs">
-                        <label className="font-label-md text-label-md text-on-surface font-semibold">Artisan Cluster / Community Name</label>
+                        <label className="font-label-md text-label-md text-on-surface font-semibold">Member Cluster / Community Name</label>
                         <input 
                           required
                           value={regCluster}
@@ -340,7 +340,7 @@ export default function Login() {
                           onChange={(e) => setRegRole(e.target.value)}
                           className="w-full bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-high border border-outline-variant/30 transition-all"
                         >
-                          <option value="artisan">Master Artisan / Weaver / Craftsman</option>
+                          <option value="artisan">Master Member / Weaver / Craftsman</option>
                           <option value="elder">Community Elder / Council Member</option>
                           <option value="storyteller">Folk Artist / Oral Storyteller</option>
                           <option value="apprentice">Apprentice / Youth Scribe</option>
